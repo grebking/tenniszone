@@ -1,4 +1,4 @@
-import Logo from "./Logo";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="md:col-span-1">
-            <Logo className="h-16 w-auto text-white mb-4" />
+            <Image src="/logo.png" alt="TennisZone" width={160} height={64} className="h-16 w-auto mb-4" />
             <p className="text-gray-500 text-sm leading-relaxed">
               America&apos;s premier tennis betting advisory. Data-driven picks,
               verified results, consistent profits.

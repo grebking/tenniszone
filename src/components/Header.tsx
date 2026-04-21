@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Logo from "./Logo";
+import Image from "next/image";
 
 const navLinks = [
   { label: "Home", href: "#" },
@@ -18,8 +18,8 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/10">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
-        <a href="#" className="text-white">
-          <Logo className="h-14 w-auto" />
+        <a href="#">
+          <Image src="/logo.png" alt="TennisZone" width={140} height={56} className="h-14 w-auto" priority />
         </a>
 
         {/* Desktop nav */}
