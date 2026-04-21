@@ -42,7 +42,8 @@ export default function Footer() {
             <h4 className="text-white font-bold mb-4">Contact</h4>
             <ul className="space-y-2 text-gray-400 text-sm">
               <li>support@tenniszone.xyz</li>
-              <li>New York, NY 10001</li>
+              <li>245 West 47th Street</li>
+              <li>New York, NY 10036</li>
               <li>United States</li>
             </ul>
             <div className="flex gap-4 mt-4">
