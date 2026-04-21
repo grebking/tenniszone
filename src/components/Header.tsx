@@ -16,10 +16,10 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/10">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
-        <a href="#">
-          <Image src="/logo.png" alt="TennisZone" width={220} height={88} className="h-20 w-auto" priority />
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/10 h-16">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 h-16">
+        <a href="#" className="relative z-10">
+          <Image src="/logo.png" alt="TennisZone" width={400} height={160} className="h-56 w-auto" priority />
         </a>
 
         {/* Desktop nav */}
