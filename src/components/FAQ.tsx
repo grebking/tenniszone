@@ -5,15 +5,15 @@ import { useState } from "react";
 const faqs = [
   {
     q: "How do I receive my picks?",
-    a: "Picks are delivered via email and SMS (Pro & VIP plans). You'll receive them 2-4 hours before match start, giving you plenty of time to place your bets on any legal US sportsbook.",
+    a: "Picks are delivered via Telegram. You'll receive them 2-4 hours before match start, giving you plenty of time to place your bets on your preferred sportsbook.",
   },
   {
     q: "Which sportsbooks can I use?",
-    a: "You can use any legal US sportsbook — DraftKings, FanDuel, BetMGM, Caesars, PointsBet, and more. We provide picks with American odds so you can place them anywhere.",
+    a: "You can use any sportsbook available in your region — Bet365, DraftKings, FanDuel, 1xBet, Betway, and more. Our picks work on any platform worldwide.",
   },
   {
     q: "What is your win rate?",
-    a: "Our verified win rate is 67% since 2019, tracked and documented across all picks. We publish monthly transparency reports so you can verify our results independently.",
+    a: "We maintain a proven win rate since 2023, tracked and documented across all picks. We publish monthly transparency reports so you can verify our results independently.",
   },
   {
     q: "Can I cancel anytime?",
@@ -21,15 +21,15 @@ const faqs = [
   },
   {
     q: "Do you offer a money-back guarantee?",
-    a: "Yes! All plans come with a 7-day free trial. VIP members also get a 30-day money-back guarantee. If you're not profitable in your first month on VIP, we'll refund you in full.",
+    a: "Yes! All plans come with a money-back guarantee. If you're not satisfied, we'll refund you — no questions asked.",
   },
   {
     q: "What tournaments do you cover?",
     a: "We cover all major tennis events including ATP Tour, WTA Tour, Grand Slams (Australian Open, French Open, Wimbledon, US Open), ATP Masters 1000, and select Challenger events.",
   },
   {
-    q: "Is sports betting legal in my state?",
-    a: "Sports betting is legal in 30+ US states. We recommend checking your local state laws. Our service provides analysis and picks — you are responsible for compliance with local regulations.",
+    q: "Is sports betting legal in my country?",
+    a: "Sports betting regulations vary by country and region. We recommend checking your local laws. Our service provides analysis and picks — you are responsible for compliance with local regulations.",
   },
 ];
 

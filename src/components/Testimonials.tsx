@@ -55,7 +55,7 @@ export default function Testimonials() {
             What Our Members Say
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Join thousands of satisfied members across the United States.
+            Join thousands of satisfied members across the world.
           </p>
         </div>
 

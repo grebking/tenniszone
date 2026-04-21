@@ -1,16 +1,16 @@
 const stats = [
-  { value: "67%", label: "Win Rate", sub: "Verified since 2019" },
+  { value: "Proven", label: "Win Rate", sub: "Verified since 2023" },
   { value: "2,400+", label: "Winning Picks", sub: "Across all tournaments" },
   { value: "$2.1M+", label: "Member Profits", sub: "Combined earnings" },
-  { value: "12K+", label: "Active Members", sub: "Across all 50 states" },
+  { value: "12K+", label: "Active Members", sub: "Across the whole world" },
 ];
 
 const recentPicks = [
-  { match: "Djokovic vs Alcaraz", pick: "Alcaraz ML", odds: "+130", result: "W", event: "US Open" },
-  { match: "Swiatek vs Gauff", pick: "Over 21.5 Games", odds: "-110", result: "W", event: "WTA Finals" },
-  { match: "Sinner vs Medvedev", pick: "Sinner -3.5", odds: "-105", result: "W", event: "ATP Masters" },
-  { match: "Sabalenka vs Rybakina", pick: "Sabalenka ML", odds: "-140", result: "W", event: "Australian Open" },
-  { match: "Fritz vs Tiafoe", pick: "Over 3.5 Sets", odds: "+100", result: "W", event: "US Open" },
+  { match: "Rune vs Berrettini", pick: "Berrettini ML", odds: "12.00", result: "W", event: "ATP Barcelona" },
+  { match: "Paolini vs Andreeva", pick: "Andreeva ML", odds: "11.50", result: "W", event: "WTA Stuttgart" },
+  { match: "Sinner vs Tsitsipas", pick: "Sinner ML", odds: "1.72", result: "W", event: "ATP Barcelona" },
+  { match: "Sabalenka vs Keys", pick: "Sabalenka -3.5", odds: "1.68", result: "W", event: "WTA Stuttgart" },
+  { match: "Alcaraz vs Auger-Aliassime", pick: "Over 22.5 Games", odds: "1.75", result: "W", event: "ATP Barcelona" },
 ];
 
 export default function Stats() {
@@ -27,7 +27,7 @@ export default function Stats() {
             Numbers Don&apos;t Lie
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Transparent, verified results since 2019. Every pick tracked, every result published.
+            Transparent, verified results since 2023. Every pick tracked, every result published.
           </p>
         </div>
 

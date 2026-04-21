@@ -9,15 +9,15 @@ export default function CTA() {
           <span className="text-[#C8E620]">Winning?</span>
         </h2>
         <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10">
-          Join 12,000+ members who trust TennisZone for their tennis betting picks.
-          Start your 7-day free trial today — no credit card required.
+          Join 12,000+ members worldwide who trust TennisZone for their tennis betting picks.
+          Start winning with expert picks today.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="#pricing"
             className="px-10 py-4 bg-[#C8E620] text-black font-bold text-lg rounded-full hover:bg-[#d4f026] transition-all hover:scale-105 shadow-lg shadow-[#C8E620]/20"
           >
-            Claim Your Free Trial
+            Get Started Now
           </a>
           <a
             href="mailto:support@tenniszone.xyz"

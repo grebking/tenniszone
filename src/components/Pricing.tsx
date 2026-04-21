@@ -3,15 +3,15 @@ const plans = [
     name: "Starter",
     price: "49",
     period: "/month",
-    desc: "Perfect for casual bettors getting started.",
+    desc: "Perfect for bettors who want daily action.",
     features: [
-      "3 picks per week",
-      "Email delivery",
+      "Daily picks (5-7 per week)",
+      "Telegram group delivery",
       "Basic match analysis",
       "Monthly performance report",
-      "Community Discord access",
+      "Money-back guarantee",
     ],
-    cta: "Start Free Trial",
+    cta: "Get Started",
     popular: false,
   },
   {
@@ -20,15 +20,15 @@ const plans = [
     period: "/month",
     desc: "Our most popular plan for serious bettors.",
     features: [
-      "Daily picks (5-7 per week)",
-      "SMS + Email delivery",
+      "Daily picks (8-12 per week)",
+      "Telegram group delivery",
       "In-depth match breakdowns",
       "Live betting alerts",
-      "Priority Discord channel",
       "Bankroll management tips",
-      "Weekly video analysis",
+      "Monthly performance report",
+      "Money-back guarantee",
     ],
-    cta: "Start Free Trial",
+    cta: "Get Started",
     popular: true,
   },
   {
@@ -38,7 +38,7 @@ const plans = [
     desc: "Maximum edge for high-volume bettors.",
     features: [
       "All Pro features",
-      "10+ picks per week",
+      "15+ picks per week",
       "1-on-1 Telegram support",
       "Pre-match & live picks",
       "Exclusive high-confidence plays",
@@ -46,7 +46,7 @@ const plans = [
       "Early access to picks",
       "Money-back guarantee",
     ],
-    cta: "Start Free Trial",
+    cta: "Get Started",
     popular: false,
   },
 ];
@@ -65,7 +65,7 @@ export default function Pricing() {
             Invest in Winning
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Every plan comes with a 7-day free trial. Cancel anytime, no questions asked.
+            Choose the plan that fits your style. Cancel anytime, no questions asked.
           </p>
         </div>
 
@@ -125,7 +125,7 @@ export default function Pricing() {
         </div>
 
         <p className="text-center text-gray-500 text-sm mt-10">
-          All prices in USD. Secure payment via Stripe. 100% money-back guarantee within 30 days.
+          All prices in USD. Secure payment via Stripe. Money-back guarantee on all plans.
         </p>
       </div>
     </section>

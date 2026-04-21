@@ -28,7 +28,7 @@ export default function Hero() {
         <p className="max-w-2xl mx-auto text-lg md:text-xl text-gray-400 mb-10 leading-relaxed">
           America&apos;s #1 tennis betting advisory. Our team of analysts delivers
           data-driven picks across ATP, WTA, and Grand Slam events with a
-          proven 67% win rate.
+          proven win rate.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
