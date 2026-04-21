@@ -6,11 +6,11 @@ const stats = [
 ];
 
 const recentPicks = [
-  { match: "Rune vs Berrettini", pick: "Berrettini ML", odds: "12.00", result: "W", event: "ATP Barcelona" },
-  { match: "Paolini vs Andreeva", pick: "Andreeva ML", odds: "11.50", result: "W", event: "WTA Stuttgart" },
-  { match: "Sinner vs Tsitsipas", pick: "Sinner ML", odds: "1.72", result: "W", event: "ATP Barcelona" },
-  { match: "Sabalenka vs Keys", pick: "Sabalenka -3.5", odds: "1.68", result: "W", event: "WTA Stuttgart" },
-  { match: "Alcaraz vs Auger-Aliassime", pick: "Over 22.5 Games", odds: "1.75", result: "W", event: "ATP Barcelona" },
+  { match: "Rune vs Berrettini", pick: "Berrettini ML", oddsEU: "12.00", oddsUS: "+1100", result: "W", event: "ATP Barcelona" },
+  { match: "Paolini vs Andreeva", pick: "Andreeva ML", oddsEU: "11.50", oddsUS: "+1050", result: "W", event: "WTA Stuttgart" },
+  { match: "Sinner vs Tsitsipas", pick: "Sinner ML", oddsEU: "1.72", oddsUS: "-139", result: "W", event: "ATP Barcelona" },
+  { match: "Sabalenka vs Keys", pick: "Sabalenka -3.5", oddsEU: "1.68", oddsUS: "-147", result: "W", event: "WTA Stuttgart" },
+  { match: "Alcaraz vs Auger-Aliassime", pick: "Over 22.5 Games", oddsEU: "1.75", oddsUS: "-133", result: "W", event: "ATP Barcelona" },
 ];
 
 export default function Stats() {
@@ -60,7 +60,8 @@ export default function Stats() {
                   <th className="px-6 py-3 font-medium">Match</th>
                   <th className="px-6 py-3 font-medium">Event</th>
                   <th className="px-6 py-3 font-medium">Pick</th>
-                  <th className="px-6 py-3 font-medium">Odds</th>
+                  <th className="px-6 py-3 font-medium">Odds (EU)</th>
+                  <th className="px-6 py-3 font-medium">Odds (US)</th>
                   <th className="px-6 py-3 font-medium">Result</th>
                 </tr>
               </thead>
@@ -73,7 +74,8 @@ export default function Stats() {
                     <td className="px-6 py-4 text-white font-medium">{pick.match}</td>
                     <td className="px-6 py-4 text-gray-400">{pick.event}</td>
                     <td className="px-6 py-4 text-white">{pick.pick}</td>
-                    <td className="px-6 py-4 text-gray-300">{pick.odds}</td>
+                    <td className="px-6 py-4 text-gray-300">{pick.oddsEU}</td>
+                    <td className="px-6 py-4 text-gray-300">{pick.oddsUS}</td>
                     <td className="px-6 py-4">
                       <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-green-500/10 text-green-400 text-sm font-bold">
                         {pick.result}

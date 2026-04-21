@@ -111,7 +111,7 @@ export default function Pricing() {
               </ul>
 
               <a
-                href="#"
+                href={`/checkout?plan=${encodeURIComponent(plan.name)}&price=${plan.price}`}
                 className={`block w-full text-center py-3.5 rounded-full font-bold text-lg transition-all ${
                   plan.popular
                     ? "bg-[#C8E620] text-black hover:bg-[#d4f026]"
