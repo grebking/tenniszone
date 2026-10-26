@@ -1,58 +1,4 @@
-const plans = [
-  {
-    name: "Starter",
-    price: "26",
-    period: "/month",
-    desc: "Perfect for bettors who want daily action.",
-    href: "https://whop.com/tenniszone/starter-1month/",
-    features: [
-      "Daily picks (5-7 per week)",
-      "Telegram group delivery",
-      "Basic match analysis",
-      "Monthly performance report",
-      "Money-back guarantee",
-    ],
-    cta: "Get Started",
-    popular: false,
-  },
-  {
-    name: "Pro",
-    price: "49",
-    period: "/month",
-    desc: "Our most popular plan for serious bettors.",
-    href: "https://whop.com/tenniszone/pro-1month/",
-    features: [
-      "Daily picks (8-12 per week)",
-      "Telegram group delivery",
-      "In-depth match breakdowns",
-      "Live betting alerts",
-      "Bankroll management tips",
-      "Monthly performance report",
-      "Money-back guarantee",
-    ],
-    cta: "Get Started",
-    popular: true,
-  },
-  {
-    name: "VIP",
-    price: "101",
-    period: "/month",
-    desc: "Maximum edge for high-volume bettors.",
-    href: "https://whop.com/tenniszone/vip-1month-2f/",
-    features: [
-      "All Pro features",
-      "15+ picks per week",
-      "1-on-1 Telegram support",
-      "Pre-match & live picks",
-      "Exclusive high-confidence plays",
-      "Custom bankroll strategy",
-      "Early access to picks",
-      "Money-back guarantee",
-    ],
-    cta: "Get Started",
-    popular: false,
-  },
-];
+import { plans } from "@/lib/plans";
 
 export default function Pricing() {
   return (
@@ -114,9 +60,7 @@ export default function Pricing() {
               </ul>
 
               <a
-                href={plan.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={`/checkout?plan=${encodeURIComponent(plan.name)}`}
                 className={`block w-full text-center py-3.5 rounded-full font-bold text-lg transition-all ${
                   plan.popular
                     ? "bg-[#C8E620] text-black hover:bg-[#d4f026]"
@@ -130,7 +74,7 @@ export default function Pricing() {
         </div>
 
         <p className="text-center text-gray-500 text-sm mt-10">
-          All prices in USD. Secure payment via Whop. Money-back guarantee on all plans.
+          All prices in USD. Secure checkout via Whop. Money-back guarantee on all plans.
         </p>
       </div>
     </section>

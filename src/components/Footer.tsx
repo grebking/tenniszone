@@ -18,11 +18,11 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-bold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-gray-400 text-sm">
-              <li><a href="#how-it-works" className="hover:text-[#C8E620] transition-colors">How It Works</a></li>
-              <li><a href="#stats" className="hover:text-[#C8E620] transition-colors">Track Record</a></li>
-              <li><a href="#pricing" className="hover:text-[#C8E620] transition-colors">Pricing</a></li>
-              <li><a href="#testimonials" className="hover:text-[#C8E620] transition-colors">Testimonials</a></li>
-              <li><a href="#faq" className="hover:text-[#C8E620] transition-colors">FAQ</a></li>
+              <li><a href="/#how-it-works" className="hover:text-[#C8E620] transition-colors">How It Works</a></li>
+              <li><a href="/#stats" className="hover:text-[#C8E620] transition-colors">Track Record</a></li>
+              <li><a href="/#pricing" className="hover:text-[#C8E620] transition-colors">Pricing</a></li>
+              <li><a href="/#testimonials" className="hover:text-[#C8E620] transition-colors">Testimonials</a></li>
+              <li><a href="/#faq" className="hover:text-[#C8E620] transition-colors">FAQ</a></li>
             </ul>
           </div>
 

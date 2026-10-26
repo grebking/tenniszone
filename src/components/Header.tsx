@@ -4,12 +4,12 @@ import { useState } from "react";
 import Image from "next/image";
 
 const navLinks = [
-  { label: "Home", href: "#" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Track Record", href: "#stats" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Home", href: "/" },
+  { label: "How It Works", href: "/#how-it-works" },
+  { label: "Track Record", href: "/#stats" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "Testimonials", href: "/#testimonials" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 export default function Header() {
@@ -18,7 +18,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/10 h-16">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 h-16">
-        <a href="#" className="relative z-10">
+        <a href="/" className="relative z-10">
           <Image src="/logo.png" alt="TennisZone" width={400} height={160} className="h-[8.38rem] w-auto" priority />
         </a>
 
@@ -34,7 +34,7 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="#pricing"
+            href="/#pricing"
             className="ml-2 px-6 py-2.5 bg-[#C8E620] text-black text-sm font-bold rounded-full hover:bg-[#d4f026] transition-colors"
           >
             Get Started
@@ -71,7 +71,7 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="#pricing"
+            href="/#pricing"
             onClick={() => setOpen(false)}
             className="px-6 py-2.5 bg-[#C8E620] text-black text-sm font-bold rounded-full text-center hover:bg-[#d4f026] transition-colors"
           >
