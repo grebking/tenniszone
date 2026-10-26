@@ -1,9 +1,10 @@
 const plans = [
   {
     name: "Starter",
-    price: "49",
+    price: "26",
     period: "/month",
     desc: "Perfect for bettors who want daily action.",
+    href: "https://whop.com/tenniszone/starter-1month/",
     features: [
       "Daily picks (5-7 per week)",
       "Telegram group delivery",
@@ -16,9 +17,10 @@ const plans = [
   },
   {
     name: "Pro",
-    price: "99",
+    price: "49",
     period: "/month",
     desc: "Our most popular plan for serious bettors.",
+    href: "https://whop.com/tenniszone/pro-1month/",
     features: [
       "Daily picks (8-12 per week)",
       "Telegram group delivery",
@@ -33,9 +35,10 @@ const plans = [
   },
   {
     name: "VIP",
-    price: "249",
+    price: "101",
     period: "/month",
     desc: "Maximum edge for high-volume bettors.",
+    href: "https://whop.com/tenniszone/vip-1month-2f/",
     features: [
       "All Pro features",
       "15+ picks per week",
@@ -111,7 +114,9 @@ export default function Pricing() {
               </ul>
 
               <a
-                href={`/checkout?plan=${encodeURIComponent(plan.name)}&price=${plan.price}`}
+                href={plan.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`block w-full text-center py-3.5 rounded-full font-bold text-lg transition-all ${
                   plan.popular
                     ? "bg-[#C8E620] text-black hover:bg-[#d4f026]"
@@ -125,7 +130,7 @@ export default function Pricing() {
         </div>
 
         <p className="text-center text-gray-500 text-sm mt-10">
-          All prices in USD. Secure payment via Stripe. Money-back guarantee on all plans.
+          All prices in USD. Secure payment via Whop. Money-back guarantee on all plans.
         </p>
       </div>
     </section>
