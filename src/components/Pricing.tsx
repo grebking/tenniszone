@@ -88,17 +88,16 @@ export default function Pricing() {
                   <span className="relative z-10">{plan.cta}</span>
                 </button>
               ) : (
-                <a
-                  href={`/checkout?plan=${encodeURIComponent(plan.name)}`}
-                  className={`block w-full text-center py-3.5 rounded-full font-bold text-lg transition-all relative overflow-hidden ${
+                <div
+                  className={`block w-full text-center py-3.5 rounded-full font-bold text-lg transition-all relative overflow-hidden cursor-not-allowed opacity-60 ${
                     plan.popular
-                      ? "bg-[#C8E620] text-black hover:bg-[#d4f026]"
-                      : "bg-white/10 text-white hover:bg-white/20"
+                      ? "bg-[#C8E620] text-black"
+                      : "bg-white/10 text-white"
                   }`}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 via-transparent to-transparent transform -rotate-12" />
+                  <div className="absolute top-0 left-0 w-2 h-full bg-red-500" />
                   <span className="relative z-10">{plan.cta}</span>
-                </a>
+                </div>
               )}
             </div>
           ))}
@@ -109,8 +108,8 @@ export default function Pricing() {
         </p>
       </div>
 
-      <div className={`fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4 transition-opacity duration-200 ${showCheckout ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-        <div className="relative w-full max-w-lg bg-[#111] rounded-2xl p-6 border border-white/10 max-h-[90vh] overflow-y-auto">
+      <div className={`fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4 transition-opacity duration-200 ${showCheckout ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={() => setShowCheckout(false)}>
+        <div className="relative w-full max-w-lg bg-[#111] rounded-2xl p-6 border border-white/10 max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
           <button
             onClick={() => setShowCheckout(false)}
             className="absolute -top-10 right-0 text-white hover:text-gray-300 text-3xl font-bold transition-colors"
