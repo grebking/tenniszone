@@ -2,7 +2,7 @@ const stats = [
   { value: "Proven", label: "Win Rate", sub: "Verified since 2023" },
   { value: "2,400+", label: "Winning Picks", sub: "Across all tournaments" },
   { value: "$2.1M+", label: "Member Profits", sub: "Combined earnings" },
-  { value: "12K+", label: "Active Members", sub: "Across the whole world" },
+  { value: "800", label: "Active Members", sub: "Across the whole world" },
 ];
 
 const recentPicks = [

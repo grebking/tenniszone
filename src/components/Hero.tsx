@@ -44,6 +44,14 @@ export default function Hero() {
           >
             See How It Works
           </a>
+          <a
+            href="https://t.me/yourtelegram"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-4 bg-blue-500 text-white font-bold text-lg rounded-full hover:bg-blue-600 transition-all"
+          >
+            Join Free Group
+          </a>
         </div>
 
         {/* Trust badges */}
@@ -60,7 +68,7 @@ export default function Hero() {
               <circle cx="9" cy="7" r="4" />
               <path d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
             </svg>
-            <span>12,000+ Members</span>
+            <span>800 Members</span>
           </div>
           <div className="flex items-center gap-2">
             <svg className="w-5 h-5 text-[#C8E620]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

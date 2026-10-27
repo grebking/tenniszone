@@ -15,7 +15,7 @@ export const plans = [
     cta: "Get Started",
     popular: false,
     whopPlanId: "plan_5qowsZXj3eOxu",
-    availability: { text: "46/200", color: "green" },
+    availability: { text: "46/300", color: "green" },
   },
   {
     name: "Starter",
