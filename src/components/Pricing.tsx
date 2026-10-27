@@ -1,11 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { plans } from "@/lib/plans";
 import EmbeddedCheckout from "./EmbeddedCheckout";
 
 export default function Pricing() {
   const [showCheckout, setShowCheckout] = useState(false);
+
+  useEffect(() => {
+    if (showCheckout) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [showCheckout]);
   return (
     <section id="pricing" className="py-24 bg-[#111] relative">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_#1a2e05_0%,_transparent_40%)]" />
@@ -35,9 +46,7 @@ export default function Pricing() {
             >
               {plan.name !== "Starter" && (
                 <div className="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none">
-                  <div className="absolute -top-40 -left-40 w-80 h-80 bg-red-500/30 transform -rotate-45" />
-                  <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-red-500/20 transform -rotate-45" />
-                  <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-500/15 via-transparent to-transparent" />
+                  <div className="absolute -top-20 -left-20 w-[150%] h-[150%] bg-gradient-to-br from-red-500/40 via-red-500/10 to-transparent transform -rotate-45 origin-top-left" />
                 </div>
               )}
               {plan.popular && (
@@ -100,19 +109,17 @@ export default function Pricing() {
         </p>
       </div>
 
-      {showCheckout && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4">
-          <div className="relative w-full max-w-lg bg-[#111] rounded-2xl p-6 border border-white/10">
-            <button
-              onClick={() => setShowCheckout(false)}
-              className="absolute -top-10 right-0 text-white hover:text-gray-300 text-3xl font-bold transition-colors"
-            >
-              ✕
-            </button>
-            <EmbeddedCheckout planId={plans.find((p) => p.name === "Starter")?.whopPlanId || ""} />
-          </div>
+      <div className={`fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4 transition-opacity duration-200 ${showCheckout ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+        <div className="relative w-full max-w-lg bg-[#111] rounded-2xl p-6 border border-white/10 max-h-[90vh] overflow-y-auto">
+          <button
+            onClick={() => setShowCheckout(false)}
+            className="absolute -top-10 right-0 text-white hover:text-gray-300 text-3xl font-bold transition-colors"
+          >
+            ✕
+          </button>
+          {showCheckout && <EmbeddedCheckout planId={plans.find((p) => p.name === "Starter")?.whopPlanId || ""} />}
         </div>
-      )}
+      </div>
     </section>
   );
 }
