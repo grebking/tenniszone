@@ -5,14 +5,6 @@ const stats = [
   { value: "800", label: "Active Members", sub: "Across the whole world" },
 ];
 
-const recentPicks = [
-  { match: "Rune vs Berrettini", pick: "Berrettini ML", oddsEU: "12.00", oddsUS: "+1100", result: "W", event: "ATP Barcelona" },
-  { match: "Paolini vs Andreeva", pick: "Andreeva ML", oddsEU: "11.50", oddsUS: "+1050", result: "W", event: "WTA Stuttgart" },
-  { match: "Sinner vs Tsitsipas", pick: "Sinner ML", oddsEU: "1.72", oddsUS: "-139", result: "W", event: "ATP Barcelona" },
-  { match: "Sabalenka vs Keys", pick: "Sabalenka -3.5", oddsEU: "1.68", oddsUS: "-147", result: "W", event: "WTA Stuttgart" },
-  { match: "Alcaraz vs Auger-Aliassime", pick: "Over 22.5 Games", oddsEU: "1.75", oddsUS: "-133", result: "W", event: "ATP Barcelona" },
-];
-
 export default function Stats() {
   return (
     <section id="stats" className="py-24 bg-[#111] relative">
@@ -32,7 +24,7 @@ export default function Stats() {
         </div>
 
         {/* Stats grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat) => (
             <div
               key={stat.label}
@@ -45,47 +37,6 @@ export default function Stats() {
               <div className="text-gray-500 text-sm mt-1">{stat.sub}</div>
             </div>
           ))}
-        </div>
-
-        {/* Recent picks table */}
-        <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
-          <div className="px-6 py-4 border-b border-white/10 flex items-center justify-between">
-            <h3 className="text-white font-bold text-lg">Recent Winning Picks</h3>
-            <span className="text-[#C8E620] text-sm font-semibold">Last 5 picks</span>
-          </div>
-          <div className="overflow-x-auto">
-            <table className="w-full text-left">
-              <thead>
-                <tr className="text-gray-500 text-sm border-b border-white/5">
-                  <th className="px-6 py-3 font-medium">Match</th>
-                  <th className="px-6 py-3 font-medium">Event</th>
-                  <th className="px-6 py-3 font-medium">Pick</th>
-                  <th className="px-6 py-3 font-medium">Odds (EU)</th>
-                  <th className="px-6 py-3 font-medium">Odds (US)</th>
-                  <th className="px-6 py-3 font-medium">Result</th>
-                </tr>
-              </thead>
-              <tbody>
-                {recentPicks.map((pick, i) => (
-                  <tr
-                    key={i}
-                    className="border-b border-white/5 last:border-0 hover:bg-white/5 transition-colors"
-                  >
-                    <td className="px-6 py-4 text-white font-medium">{pick.match}</td>
-                    <td className="px-6 py-4 text-gray-400">{pick.event}</td>
-                    <td className="px-6 py-4 text-white">{pick.pick}</td>
-                    <td className="px-6 py-4 text-gray-300">{pick.oddsEU}</td>
-                    <td className="px-6 py-4 text-gray-300">{pick.oddsUS}</td>
-                    <td className="px-6 py-4">
-                      <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-green-500/10 text-green-400 text-sm font-bold">
-                        {pick.result}
-                      </span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
         </div>
       </div>
     </section>

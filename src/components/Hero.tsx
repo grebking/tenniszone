@@ -45,7 +45,7 @@ export default function Hero() {
             See How It Works
           </a>
           <a
-            href="https://t.me/yourtelegram"
+            href="https://t.me/tenniszonefree"
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-4 bg-blue-500 text-white font-bold text-lg rounded-full hover:bg-blue-600 transition-all"
