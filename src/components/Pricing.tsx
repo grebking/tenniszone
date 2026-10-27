@@ -19,8 +19,8 @@ export default function Pricing() {
     };
   }, [showCheckout]);
   return (
-    <section id="pricing" className="py-24 bg-[#111] relative">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_#1a2e05_0%,_transparent_40%)]" />
+    <section id="pricing" className="py-24 bg-[#0a0a0a] relative">
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-[#111] to-[#111]" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">

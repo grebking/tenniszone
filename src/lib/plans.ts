@@ -40,13 +40,11 @@ export const plans = [
     period: "/month",
     desc: "Maximum edge for high-volume bettors.",
     features: [
-      "All Pro features",
       "15+ picks per week",
       "1-on-1 Telegram support",
       "Pre-match & live picks",
       "Exclusive high-confidence plays",
       "Custom bankroll strategy",
-      "Early access to picks",
       "Money-back guarantee",
     ],
     cta: "Get Started",
