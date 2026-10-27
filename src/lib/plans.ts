@@ -7,15 +7,15 @@ export const plans = [
     features: [
       "Daily picks (8-12 per week)",
       "Telegram group delivery",
-      "In-depth match breakdowns",
       "Live betting alerts",
-      "Bankroll management tips",
       "Monthly performance report",
+      "1-on-1 Telegram support",
       "Money-back guarantee",
     ],
     cta: "Get Started",
     popular: false,
     whopPlanId: "plan_5qowsZXj3eOxu",
+    availability: { text: "46/200", color: "green" },
   },
   {
     name: "Starter",
@@ -30,8 +30,9 @@ export const plans = [
       "Money-back guarantee",
     ],
     cta: "Get Started",
-    popular: false,
+    popular: true,
     whopPlanId: "plan_akaR1lpSKr2L5",
+    availability: { text: "242/500", color: "green" },
   },
   {
     name: "VIP",
@@ -51,6 +52,7 @@ export const plans = [
     cta: "Get Started",
     popular: false,
     whopPlanId: "plan_3KpPFBcljUcse",
+    availability: { text: "0/50", color: "red" },
   },
 ] as const;
 

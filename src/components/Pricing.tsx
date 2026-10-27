@@ -6,6 +6,7 @@ import EmbeddedCheckout from "./EmbeddedCheckout";
 
 export default function Pricing() {
   const [showCheckout, setShowCheckout] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
 
   useEffect(() => {
     if (showCheckout) {
@@ -75,9 +76,24 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              {plan.name === "Starter" ? (
+              {"availability" in plan && (
+                <div className="mb-4 text-center">
+                  <span
+                    className={`text-sm font-bold ${
+                      plan.availability.color === "red" ? "text-red-500" : "text-green-500"
+                    }`}
+                  >
+                    {plan.availability.text}
+                  </span>
+                </div>
+              )}
+
+              {(plan.name === "Starter" || plan.name === "Pro") ? (
                 <button
-                  onClick={() => setShowCheckout(true)}
+                  onClick={() => {
+                    setSelectedPlan(plan.whopPlanId);
+                    setShowCheckout(true);
+                  }}
                   className="block w-full text-center py-3.5 rounded-full font-bold text-lg transition-all bg-[#C8E620] text-black hover:bg-[#d4f026] relative overflow-hidden"
                 >
                   <span className="relative z-10">{plan.cta}</span>
@@ -110,7 +126,7 @@ export default function Pricing() {
           >
             ✕
           </button>
-          {showCheckout && <EmbeddedCheckout planId={plans.find((p) => p.name === "Starter")?.whopPlanId || ""} />}
+          {showCheckout && <EmbeddedCheckout planId={selectedPlan || ""} />}
         </div>
       </div>
     </section>
