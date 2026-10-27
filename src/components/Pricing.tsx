@@ -45,11 +45,8 @@ export default function Pricing() {
               }`}
             >
               {plan.name !== "Starter" && (
-                <div className="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none">
-                  <div className="absolute -top-20 -left-20 w-[150%] h-[150%] bg-gradient-to-br from-red-500/40 via-red-500/10 to-transparent transform -rotate-45 origin-top-left" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-9xl font-black text-red-600 opacity-80">X</span>
-                  </div>
+                <div className="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none flex items-center justify-center bg-black/50">
+                  <span className="text-9xl font-black text-red-600">X</span>
                 </div>
               )}
               {plan.popular && (
