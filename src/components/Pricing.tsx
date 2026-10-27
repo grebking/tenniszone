@@ -35,8 +35,9 @@ export default function Pricing() {
             >
               {plan.name !== "Starter" && (
                 <div className="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none">
-                  <div className="absolute -top-32 -left-32 w-64 h-64 bg-red-500/20 transform -rotate-45" />
-                  <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-500/10 via-transparent to-transparent" />
+                  <div className="absolute -top-40 -left-40 w-80 h-80 bg-red-500/30 transform -rotate-45" />
+                  <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-red-500/20 transform -rotate-45" />
+                  <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-500/15 via-transparent to-transparent" />
                 </div>
               )}
               {plan.popular && (
@@ -48,16 +49,10 @@ export default function Pricing() {
               <h3 className="text-xl font-bold text-white mb-2">{plan.name}</h3>
               <p className="text-gray-400 text-sm mb-6">{plan.desc}</p>
 
-              {plan.name !== "VIP" ? (
-                <div className="flex items-baseline gap-1 mb-8">
-                  <span className="text-5xl font-black text-white">${plan.price}</span>
-                  <span className="text-gray-500 text-lg">{plan.period}</span>
-                </div>
-              ) : (
-                <div className="mb-8">
-                  <span className="text-2xl font-bold text-red-500 uppercase tracking-wider">Discontinued</span>
-                </div>
-              )}
+              <div className="flex items-baseline gap-1 mb-8">
+                <span className="text-5xl font-black text-white">${plan.price}</span>
+                <span className="text-gray-500 text-lg">{plan.period}</span>
+              </div>
 
               <ul className="space-y-3 mb-8">
                 {plan.features.map((f) => (
@@ -106,11 +101,11 @@ export default function Pricing() {
       </div>
 
       {showCheckout && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90" onClick={() => setShowCheckout(false)}>
-          <div className="relative w-full max-w-md p-4" onClick={(e) => e.stopPropagation()}>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4">
+          <div className="relative w-full max-w-lg bg-[#111] rounded-2xl p-6 border border-white/10">
             <button
               onClick={() => setShowCheckout(false)}
-              className="absolute -top-12 right-0 text-white hover:text-gray-300 text-2xl font-bold"
+              className="absolute -top-10 right-0 text-white hover:text-gray-300 text-3xl font-bold transition-colors"
             >
               ✕
             </button>
