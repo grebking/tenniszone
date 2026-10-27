@@ -1,22 +1,5 @@
 import { plans } from "@/lib/plans";
-import { loadWhop } from "@whop/elements";
-import { Checkout, CheckoutElement, WhopElements } from "@whop/elements-react";
-import dynamic from "next/dynamic";
-
-const EmbeddedCheckout = dynamic(() => Promise.resolve(EmbeddedCheckoutComponent), {
-  ssr: false,
-  loading: () => <div className="w-full h-12 bg-white/10 rounded-full animate-pulse" />,
-});
-
-function EmbeddedCheckoutComponent({ planId }: { planId: string }) {
-  return (
-    <WhopElements elements={loadWhop()}>
-      <Checkout plan={planId}>
-        <CheckoutElement />
-      </Checkout>
-    </WhopElements>
-  );
-}
+import EmbeddedCheckout from "./EmbeddedCheckout";
 
 export default function Pricing() {
   return (
