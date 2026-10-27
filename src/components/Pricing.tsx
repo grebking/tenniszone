@@ -1,4 +1,6 @@
 import { plans } from "@/lib/plans";
+import { loadWhop } from "@whop/elements";
+import { Checkout, CheckoutElement, WhopElements } from "@whop/elements-react";
 
 export default function Pricing() {
   return (
@@ -28,6 +30,9 @@ export default function Pricing() {
                   : "bg-white/5 border-white/10 hover:border-white/20"
               }`}
             >
+              {plan.name !== "Starter" && (
+                <div className="absolute top-0 left-0 right-0 h-1 bg-red-500 rounded-t-2xl" />
+              )}
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#C8E620] text-black text-xs font-bold rounded-full uppercase tracking-wider">
                   Most Popular
@@ -59,16 +64,24 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              <a
-                href={`/checkout?plan=${encodeURIComponent(plan.name)}`}
-                className={`block w-full text-center py-3.5 rounded-full font-bold text-lg transition-all ${
-                  plan.popular
-                    ? "bg-[#C8E620] text-black hover:bg-[#d4f026]"
-                    : "bg-white/10 text-white hover:bg-white/20"
-                }`}
-              >
-                {plan.cta}
-              </a>
+              {plan.name === "Starter" ? (
+                <WhopElements elements={loadWhop()}>
+                  <Checkout plan={plan.whopPlanId}>
+                    <CheckoutElement />
+                  </Checkout>
+                </WhopElements>
+              ) : (
+                <a
+                  href={`/checkout?plan=${encodeURIComponent(plan.name)}`}
+                  className={`block w-full text-center py-3.5 rounded-full font-bold text-lg transition-all ${
+                    plan.popular
+                      ? "bg-[#C8E620] text-black hover:bg-[#d4f026]"
+                      : "bg-white/10 text-white hover:bg-white/20"
+                  }`}
+                >
+                  {plan.cta}
+                </a>
+              )}
             </div>
           ))}
         </div>

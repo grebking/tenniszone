@@ -30,7 +30,7 @@ export const plans = [
       "Money-back guarantee",
     ],
     cta: "Get Started",
-    popular: true,
+    popular: false,
     whopPlanId: "plan_5qowsZXj3eOxu",
   },
   {
