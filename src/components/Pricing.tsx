@@ -1,7 +1,11 @@
+"use client";
+
+import { useState } from "react";
 import { plans } from "@/lib/plans";
 import EmbeddedCheckout from "./EmbeddedCheckout";
 
 export default function Pricing() {
+  const [showCheckout, setShowCheckout] = useState(false);
   return (
     <section id="pricing" className="py-24 bg-[#111] relative">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_#1a2e05_0%,_transparent_40%)]" />
@@ -30,7 +34,10 @@ export default function Pricing() {
               }`}
             >
               {plan.name !== "Starter" && (
-                <div className="absolute top-0 left-0 right-0 h-1 bg-red-500 rounded-t-2xl" />
+                <div className="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none">
+                  <div className="absolute -top-32 -left-32 w-64 h-64 bg-red-500/20 transform -rotate-45" />
+                  <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-500/10 via-transparent to-transparent" />
+                </div>
               )}
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#C8E620] text-black text-xs font-bold rounded-full uppercase tracking-wider">
@@ -41,10 +48,16 @@ export default function Pricing() {
               <h3 className="text-xl font-bold text-white mb-2">{plan.name}</h3>
               <p className="text-gray-400 text-sm mb-6">{plan.desc}</p>
 
-              <div className="flex items-baseline gap-1 mb-8">
-                <span className="text-5xl font-black text-white">${plan.price}</span>
-                <span className="text-gray-500 text-lg">{plan.period}</span>
-              </div>
+              {plan.name !== "VIP" ? (
+                <div className="flex items-baseline gap-1 mb-8">
+                  <span className="text-5xl font-black text-white">${plan.price}</span>
+                  <span className="text-gray-500 text-lg">{plan.period}</span>
+                </div>
+              ) : (
+                <div className="mb-8">
+                  <span className="text-2xl font-bold text-red-500 uppercase tracking-wider">Discontinued</span>
+                </div>
+              )}
 
               <ul className="space-y-3 mb-8">
                 {plan.features.map((f) => (
@@ -64,17 +77,25 @@ export default function Pricing() {
               </ul>
 
               {plan.name === "Starter" ? (
-                <EmbeddedCheckout planId={plan.whopPlanId} />
+                <button
+                  onClick={() => setShowCheckout(true)}
+                  className="block w-full text-center py-3.5 rounded-full font-bold text-lg transition-all bg-[#C8E620] text-black hover:bg-[#d4f026] relative overflow-hidden"
+                >
+                  <span className="relative z-10">{plan.cta}</span>
+                </button>
               ) : (
                 <a
                   href={`/checkout?plan=${encodeURIComponent(plan.name)}`}
-                  className={`block w-full text-center py-3.5 rounded-full font-bold text-lg transition-all ${
+                  className={`block w-full text-center py-3.5 rounded-full font-bold text-lg transition-all relative overflow-hidden ${
                     plan.popular
                       ? "bg-[#C8E620] text-black hover:bg-[#d4f026]"
                       : "bg-white/10 text-white hover:bg-white/20"
                   }`}
                 >
-                  {plan.cta}
+                  {plan.name !== "Starter" && (
+                    <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 via-transparent to-transparent transform -rotate-12" />
+                  )}
+                  <span className="relative z-10">{plan.cta}</span>
                 </a>
               )}
             </div>
@@ -85,6 +106,20 @@ export default function Pricing() {
           All prices in USD. Secure checkout via Whop. Money-back guarantee on all plans.
         </p>
       </div>
+
+      {showCheckout && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90" onClick={() => setShowCheckout(false)}>
+          <div className="relative w-full max-w-md p-4" onClick={(e) => e.stopPropagation()}>
+            <button
+              onClick={() => setShowCheckout(false)}
+              className="absolute -top-12 right-0 text-white hover:text-gray-300 text-2xl font-bold"
+            >
+              ✕
+            </button>
+            <EmbeddedCheckout planId={plans.find((p) => p.name === "Starter")?.whopPlanId || ""} />
+          </div>
+        </div>
+      )}
     </section>
   );
 }

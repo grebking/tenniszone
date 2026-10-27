@@ -1,21 +1,5 @@
 export const plans = [
   {
-    name: "Starter",
-    price: "32",
-    period: "/month",
-    desc: "Perfect for bettors who want daily action.",
-    features: [
-      "Daily picks (5-7 per week)",
-      "Telegram group delivery",
-      "Basic match analysis",
-      "Monthly performance report",
-      "Money-back guarantee",
-    ],
-    cta: "Get Started",
-    popular: false,
-    whopPlanId: "plan_akaR1lpSKr2L5",
-  },
-  {
     name: "Pro",
     price: "60",
     period: "/month",
@@ -32,6 +16,22 @@ export const plans = [
     cta: "Get Started",
     popular: false,
     whopPlanId: "plan_5qowsZXj3eOxu",
+  },
+  {
+    name: "Starter",
+    price: "32",
+    period: "/month",
+    desc: "Perfect for bettors who want daily action.",
+    features: [
+      "Daily picks (5-7 per week)",
+      "Telegram group delivery",
+      "Basic match analysis",
+      "Monthly performance report",
+      "Money-back guarantee",
+    ],
+    cta: "Get Started",
+    popular: false,
+    whopPlanId: "plan_akaR1lpSKr2L5",
   },
   {
     name: "VIP",
