@@ -44,11 +44,6 @@ export default function Pricing() {
                   : "bg-white/5 border-white/10 hover:border-white/20"
               }`}
             >
-              {plan.name !== "Starter" && (
-                <div className="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none flex items-center justify-center bg-black/50">
-                  <span className="text-9xl font-black text-red-600">X</span>
-                </div>
-              )}
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#C8E620] text-black text-xs font-bold rounded-full uppercase tracking-wider">
                   Most Popular
@@ -89,14 +84,13 @@ export default function Pricing() {
                 </button>
               ) : (
                 <div
-                  className={`block w-full text-center py-3.5 rounded-full font-bold text-lg transition-all relative overflow-hidden cursor-not-allowed opacity-60 ${
+                  className={`block w-full text-center py-3.5 rounded-full font-bold text-lg transition-all cursor-not-allowed opacity-60 ${
                     plan.popular
                       ? "bg-[#C8E620] text-black"
                       : "bg-white/10 text-white"
                   }`}
                 >
-                  <div className="absolute top-0 left-0 w-2 h-full bg-red-500" />
-                  <span className="relative z-10">{plan.cta}</span>
+                  {plan.cta}
                 </div>
               )}
             </div>
