@@ -92,9 +92,7 @@ export default function Pricing() {
                       : "bg-white/10 text-white hover:bg-white/20"
                   }`}
                 >
-                  {plan.name !== "Starter" && (
-                    <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 via-transparent to-transparent transform -rotate-12" />
-                  )}
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 via-transparent to-transparent transform -rotate-12" />
                   <span className="relative z-10">{plan.cta}</span>
                 </a>
               )}
