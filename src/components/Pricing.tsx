@@ -47,10 +47,9 @@ export default function Pricing() {
               {plan.name !== "Starter" && (
                 <div className="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none">
                   <div className="absolute -top-20 -left-20 w-[150%] h-[150%] bg-gradient-to-br from-red-500/40 via-red-500/10 to-transparent transform -rotate-45 origin-top-left" />
-                  <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                    <line x1="0" y1="0" x2="100" y2="100" stroke="red" strokeWidth="8" opacity="0.7" />
-                    <line x1="100" y1="0" x2="0" y2="100" stroke="red" strokeWidth="8" opacity="0.7" />
-                  </svg>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-9xl font-black text-red-600 opacity-80">X</span>
+                  </div>
                 </div>
               )}
               {plan.popular && (
