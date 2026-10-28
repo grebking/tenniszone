@@ -18,6 +18,11 @@ export const metadata: Metadata = {
   title: "TennisZone — America's #1 Tennis Betting Advisory",
   description:
     "Expert tennis picks and betting analysis. Data-driven picks across ATP, WTA & Grand Slams with a verified 67% win rate. Join 12,000+ winning members.",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({
