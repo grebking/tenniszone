@@ -3,8 +3,6 @@
 import { loadWhop } from "@whop/elements";
 import { Checkout, CheckoutElement, WhopElements } from "@whop/elements-react";
 
-const elements = loadWhop();
-
 export default function EmbeddedCheckout({
   planId,
   returnUrl,
@@ -12,6 +10,8 @@ export default function EmbeddedCheckout({
   planId: string;
   returnUrl?: string;
 }) {
+  const elements = loadWhop();
+
   return (
     <WhopElements elements={elements}>
       <Checkout plan={planId} returnUrl={returnUrl}>
