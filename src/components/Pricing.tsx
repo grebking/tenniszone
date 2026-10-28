@@ -1,12 +1,18 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { plans } from "@/lib/plans";
 import EmbeddedCheckout from "./EmbeddedCheckout";
 
 export default function Pricing() {
   const [showCheckout, setShowCheckout] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
+  const returnUrl = useMemo(() => {
+    if (typeof window === "undefined" || window.location.protocol !== "https:") return undefined;
+    const url = new URL("/checkout", window.location.origin);
+    url.searchParams.set("plan", selectedPlan === "plan_akaR1lpSKr2L5" ? "Starter" : "Pro");
+    return url.toString();
+  }, [selectedPlan]);
 
   useEffect(() => {
     if (showCheckout) {
@@ -18,6 +24,15 @@ export default function Pricing() {
       document.body.style.overflow = "unset";
     };
   }, [showCheckout]);
+  useEffect(() => {
+    if (!showCheckout) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setShowCheckout(false);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [showCheckout]);
+
   return (
     <section id="pricing" className="py-24 bg-[#0a0a0a] relative">
       <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-[#111] to-[#111]" />
@@ -118,15 +133,28 @@ export default function Pricing() {
         </p>
       </div>
 
-      <div className={`fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4 transition-opacity duration-200 ${showCheckout ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} onClick={() => setShowCheckout(false)}>
-        <div className="relative w-full max-w-lg bg-[#111] rounded-2xl p-6 border border-white/10 max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+      <div
+        className={`fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black/90 p-3 sm:p-6 transition-opacity duration-200 ${showCheckout ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+        onClick={() => setShowCheckout(false)}
+        aria-hidden={!showCheckout}
+      >
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Secure Whop checkout"
+          className="relative my-auto w-full max-w-lg rounded-2xl bg-white p-2 sm:p-4 shadow-2xl max-h-[94vh] overflow-y-auto"
+          onClick={(e) => e.stopPropagation()}
+        >
           <button
             onClick={() => setShowCheckout(false)}
-            className="absolute -top-10 right-0 text-white hover:text-gray-300 text-3xl font-bold transition-colors"
+            aria-label="Close checkout"
+            className="sticky top-0 z-10 ml-auto flex h-10 w-10 items-center justify-center rounded-full bg-black text-2xl font-bold text-white transition-colors hover:bg-gray-700"
           >
             ✕
           </button>
-          {showCheckout && <EmbeddedCheckout planId={selectedPlan || ""} />}
+          {showCheckout && selectedPlan && (
+            <EmbeddedCheckout key={selectedPlan} planId={selectedPlan} returnUrl={returnUrl} />
+          )}
         </div>
       </div>
     </section>
